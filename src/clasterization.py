@@ -1,8 +1,10 @@
 from sklearn.cluster import KMeans, DBSCAN
+from sklearn.mixture import GaussianMixture
 
 methods = [
     'kmeans',
     'dbscan',
+    'gaussian_mixture'
     # TODO: add more methods
 ]
 
@@ -18,5 +20,7 @@ def clasterize(method_name, embeddings, **kwargs):
         return DBSCAN(
             **kwargs
         ).fit_predict(embeddings)
-    else:
-        pass
+    elif method_name == 'gaussian_mixture':
+        return GaussianMixture(
+            **kwargs
+        ).fit_predict(embeddings)
