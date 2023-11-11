@@ -1,4 +1,4 @@
-
+from sklearn.cluster import KMeans, DBSCAN
 
 methods = [
     'kmeans',
@@ -11,12 +11,10 @@ def clasterize(method_name, embeddings, **kwargs):
         raise ValueError(f'Invalid method name: {method_name}')
     
     if method_name == 'kmeans':
-        from sklearn.cluster import KMeans
         return KMeans(
             **kwargs
         ).fit_predict(embeddings)
     elif method_name == 'dbscan':
-        from sklearn.cluster import DBSCAN
         return DBSCAN(
             **kwargs
         ).fit_predict(embeddings)

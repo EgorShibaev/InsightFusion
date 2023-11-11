@@ -1,5 +1,4 @@
 import numpy as np
-from sklearn.neighbors import NearestNeighbors
 from scipy.stats import multivariate_normal
 from tqdm.notebook import tqdm
 from sklearn.decomposition import PCA
