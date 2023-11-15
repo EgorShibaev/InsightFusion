@@ -18,9 +18,12 @@ def clasterize(method_name, embeddings, **kwargs):
     if method_name == 'kmeans':
         if 'n_clusters' not in kwargs:
             kwargs['n_clusters'] = 5
-        return KMeans(
+        if 'n_init' not in kwargs:
+            kwargs['n_init'] = 'auto'
+        kmeans = KMeans(
             **kwargs
-        ).fit_predict(embeddings)
+        ).fit(embeddings)
+        return kmeans.predict(embeddings), kmeans
     elif method_name == 'dbscan':
         return DBSCAN(
             **kwargs
