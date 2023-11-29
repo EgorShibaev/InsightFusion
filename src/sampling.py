@@ -4,7 +4,7 @@ from tqdm.notebook import tqdm
 from sklearn.decomposition import PCA
 
 
-def sample_from_claster(embeddings, comments, n_samples=1, components_PCA=10):
+def sample_from_claster(embeddings, comments, n_samples=1):
     """
     Samples comments from a claster.
     :param embeddings: np.array of shape (n_samples, n_features)
