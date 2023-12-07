@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="feedback-page">
+<div id="nav-placeholder"></div>
+
+<div class="content-container">
+    <form id="link-form">
+        <input type="text" id="link-input" placeholder="Enter your link here">
+        <div id="send-action" class="send-disabled">Send</div>
+    </form>
+</div>
+<div id="video-preview"></div>
+<div id="video-stats" style="display: none">
+    <div class="stat-item views">
+        <div class="stat-title">Views</div>
+        <div class="stat-data">2.1 million</div>
+    </div>
+    <div class="stat-item comments">
+        <div class="stat-title">Comments</div>
+        <div class="stat-data">32.4 k</div>
+    </div>
+    <div class="stat-item likes">
+        <div class="stat-title">Likes</div>
+        <div class="stat-data">256 k</div>
+    </div>
+</div>
+
+
+<div class="carousel-container" style="display: none">
+    <div class="carousel">
+        <div class="item a">
+            <p>This film really makes us think more about humans and the future. Scientists are trying to make the world better, while they are destroying it at the same time.</p>
+        </div>
+        <div class="item b">
+            <p>Imagine being an atomic bomb creator and you have realized that your fellow human race are in a great serious danger in the future, living a planet that has nuclear weapons.</p>
+        </div>
+        <div class="item c">
+            <p>It's a great movie, but it's not a movie that you can watch over and over again. It's a movie that you can watch once and then you can watch it again and again.</p>
+        </div>
+        <div class="item d">
+            <p>Hollywood and the war machine, a beautiful marriage of collapsed morality.</p>
+        </div>
+        <div class="item e">
+            <p>A movie about how the US killed millions of people with bombs.</p>
+        </div>
+        <div class="item f">
+            <p>I'm Japanese, but this movie is very interesting. I think it is important to look at what the people who developed the atomic bomb thought, as well as the background of America and the trends of the people at the time, from the other side's perspective.</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    $(function(){
+        $("#nav-placeholder").load("js/navbar.html");
+    });
+</script>
+<script src="js/button.js"></script>
+</body>
+</html>

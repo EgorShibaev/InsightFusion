@@ -21,7 +21,7 @@
     /* color is charcoal*/
     background-color: #16415e;
     /* background-color: #000000; */
-    color: white;
+    color: #1940dd;
     padding: 10px;
     text-align: left;
 }
@@ -53,3 +53,224 @@
     margin-left: 50px;
     border-radius: 50px;
 }
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    /* ... styling for drop button ... */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: radial-gradient(circle at center, #b0acab, #dbd6d6);
+    width: 400px;
+    height: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.dropdown-content .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+/* Feedback AI */
+.feedback-page {
+    background-color: #eae5e5; /* Replace with the color of your choice */
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+#link-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#link-form input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    padding-right: 8px;
+    border-radius: 11px;
+    padding-right: 60px;
+    background-color: transparent;
+    border: 1.5px solid #4753ff;
+}
+
+.send-disabled, .send-enabled {
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-disabled {
+    background-color: #cccccc; /* Light gray - appears disabled */
+    cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+}
+
+.send-enabled {
+    background-color: #4CAF50; /* Active color when input is not empty */
+}
+
+/* You can add :hover effect for .send-enabled if you like */
+.send-enabled:hover {
+    background-color: #45a049;
+}
+
+#video-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 120px;
+}
+
+#video-stats {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+    padding-bottom: 80px;
+}
+
+#video-stats .stat-item {
+    color: #c6bdbd;
+    background: radial-gradient(circle at center, #3b9ddf, #16415e);
+    border-radius: 10px;
+    width: 200px;
+    height: 180px;
+    display: flex;
+    flex-direction: column; /* Arrange title and data in a column */
+    align-items: center; /* Center-align items */
+    justify-content: center; /* Center vertically */
+    padding: 10px;
+}
+
+#video-stats .stat-title {
+    font-size: 1.2em; /* Larger font size for titles */
+    margin-bottom: 80px; /* Space between title and data */
+    font-weight: bold; /* Make title bold */
+}
+
+#video-stats .stat-data {
+    font-size: 1.5em; /* Even larger font size for data */
+    font-weight: bold;
+    /* Additional styling as needed */
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+    margin-left: 350px;
+
+    width: 250px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.carousel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: #000;
+    width: 250px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    text-align: left;
+    color: #1c4a8d;
+    opacity: 0.95;
+    border-radius: 10px;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    border: 1.5px solid #4753ff;
+}
+
+.item h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.item p {
+    font-size: 1em;
+
+    margin-left: 15px;
+}
+
+.a {
+    transform: rotateY(0deg) translateZ(250px);
+    background: #fff;
+}
+.b {
+    transform: rotateY(60deg) translateZ(250px);
+    background: #fff;
+}
+.c {
+    transform: rotateY(120deg) translateZ(250px);
+    background: #fff;
+}
+.d {
+    transform: rotateY(180deg) translateZ(250px);
+    background: #fff;
+}
+.e {
+    transform: rotateY(240deg) translateZ(250px);
+    background: #fff;
+}
+.f {
+    transform: rotateY(300deg) translateZ(250px);
+    background: #fff;
+}
+
+
+
+
+

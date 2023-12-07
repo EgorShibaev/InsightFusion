@@ -4,20 +4,15 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="top-bar">
-    <a href="login.html">Login</a>
-    <a href="contact_us.html">Contact Us</a>
-</div>
+<div id="nav-placeholder"></div>
 
-<!-- Rest of your website content goes here -->
-<div class="main-nav">
-    <img src="/data/IMG_9690.PNG" alt="InsightFusion Logo" class="logo">
-    <span class="nav-brand">InsightFusion</span>
-    <a href="index.html">Home</a>
-    <a href="about_us.html">About Us</a>
-    <a href="products.html">Products</a>
-    <a href="pricing.html">Pricing</a>
-</div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    $(function(){
+        $("#nav-placeholder").load("js/navbar.html");
+    });
+</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

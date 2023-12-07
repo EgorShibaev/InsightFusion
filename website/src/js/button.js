@@ -1,0 +1,76 @@
+// main.js
+document.addEventListener("DOMContentLoaded", function() {
+    var inputField = document.getElementById("link-input");
+    var sendAction = document.getElementById("send-action");
+    var videoPreview = document.getElementById("video-preview");
+    var videoStats = document.getElementById("video-stats");
+    var carousel = document.querySelector(".carousel-container");
+
+    inputField.addEventListener("input", function() {
+        toggleSendButton();
+    });
+
+    sendAction.addEventListener("click", function() {
+        if(sendAction.classList.contains("send-enabled")) {
+            var videoUrl = inputField.value;
+            var videoId = extractYoutubeVideoId(videoUrl);
+            if (videoId) {
+                displayVideoPreview(videoId);
+            } else {
+                console.log("Invalid YouTube URL");
+            }
+            // Add your send logic here
+
+        }
+    });
+
+    function extractYoutubeVideoId(url) {
+        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        var match = url.match(regExp);
+
+        if (match && match[2].length == 11) {
+            return match[2];
+        } else {
+            return null;
+        }
+    }
+
+    function toggleSendButton() {
+        if(inputField.value.trim() !== "") {
+            sendAction.classList.remove("send-disabled");
+            sendAction.classList.add("send-enabled");
+        } else {
+            sendAction.classList.remove("send-enabled");
+            sendAction.classList.add("send-disabled");
+        }
+    }
+
+    function displayVideoPreview(videoId) {
+        videoPreview.innerHTML = '<iframe width="720" height="405" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
+        videoStats.style.display = "flex"
+        carousel.style.display = "flex";
+    }
+});
+
+$(document).ready(function() {
+    var carousel = $(".carousel");
+    var currdeg = 0;
+    var itemWidth = 250; // Width of each item in pixels
+
+    // Attach click event to each carousel item
+    $(".item").on("click", function() {
+        rotateCarousel();
+    });
+
+    function rotateCarousel() {
+        currdeg -= 60; // Assuming each item rotates the carousel by 60 degrees
+        carousel.css({
+            "-webkit-transform": "rotateY(" + currdeg + "deg)",
+            "-moz-transform": "rotateY(" + currdeg + "deg)",
+            "-o-transform": "rotateY(" + currdeg + "deg)",
+            "transform": "rotateY(" + currdeg + "deg)"
+        });
+    }
+});
+
+
