@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var sendAction = document.getElementById("send-action");
     var videoPreview = document.getElementById("video-preview");
     var videoStats = document.getElementById("video-stats");
-    var carousel = document.querySelector(".carousel-container");
+    var info = document.querySelector(".one-more-container");
+    var info2 = document.querySelector(".one-more-container-rev");
 
     inputField.addEventListener("input", function() {
         toggleSendButton();
@@ -48,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function displayVideoPreview(videoId) {
         videoPreview.innerHTML = '<iframe width="720" height="405" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
         videoStats.style.display = "flex"
-        carousel.style.display = "flex";
+        info.style.display = "flex";
+        info2.style.display = "flex";
     }
 });
 
@@ -74,3 +76,31 @@ $(document).ready(function() {
 });
 
 
+function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+const obj = document.getElementById("animated-number");
+animateValue(obj, 32504, 32544, 1000);
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Start the animation when the element is visible
+            animateValue(obj, 32544 - 44, 32544, 2500);
+            // Optionally, unobserve after the animation starts
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 }); // Adjust the threshold as needed
+
+observer.observe(obj);

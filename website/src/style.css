@@ -205,7 +205,10 @@
     height: 200px;
     position: relative;
     perspective: 1000px;
+
 }
+
+
 
 .carousel {
     height: 100%;
@@ -270,7 +273,83 @@
     background: #fff;
 }
 
+.one-more-container {
+    display: flex;
+    align-items: center;
+    /* reverse items order */
 
+    /* Adjust the space between the carousel and the info section */
+
+}
+
+
+
+
+.info-container {
+    /* Styling for the container of the title and text */
+    justify-content: center;
+    padding-top: 120px;
+    margin-left: 350px;
+
+    width: 450px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+}
+
+
+
+
+
+.info-container .title {
+    font-size: 2.0em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #16415e;
+}
+
+.info-container hr {
+    width: 100%;
+    border: none;
+    height: 2px;
+    background-color: #16415e;
+    margin-top: 16px;
+
+
+}
+
+.info-container p {
+    color: #3838ee;
+    font-size: 20px;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.text-and-number {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Adjust the space between text and number */
+}
+
+.number {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #16415e;
+    margin-bottom: 10px;
+}
+
+.list-button {
+    padding: 10px 15px;
+    border-radius: 25px;
+    background: radial-gradient(circle at center, #3b9ddf, #16415e);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100px;
+    margin-left: 160px;
+    color: white;
+}
 
 
 
