@@ -14,13 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if(sendAction.classList.contains("send-enabled")) {
             var videoUrl = inputField.value;
             var videoId = extractYoutubeVideoId(videoUrl);
-            if (videoId) {
-                displayVideoPreview(videoId);
-            } else {
+            if (!videoId) {
                 console.log("Invalid YouTube URL");
+                return;
             }
-            // Add your send logic here
-
+            displayVideoPreview(videoId);
+            displayComments(videoId);
         }
     });
 
@@ -47,8 +46,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function displayVideoPreview(videoId) {
         videoPreview.innerHTML = '<iframe width="720" height="405" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
-        videoStats.style.display = "flex"
-        carousel.style.display = "flex";
+        videoStats.style.display = "flex";
+    }
+
+    function displayComments(videoId) {
+        fetch(`http://127.0.0.1:5000/analyze_comments/${videoId}`, {
+            method: 'POST',
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.querySelector(".item.a").innerHTML = `<p>${data.description_0}</p>`;
+            document.querySelector(".item.b").innerHTML = `<p>${data.description_1}</p>`;
+            document.querySelector(".item.c").innerHTML = `<p>${data.description_2}</p>`;
+            document.querySelector(".item.d").innerHTML = `<p>${data.description_3}</p>`;
+            document.querySelector(".item.e").innerHTML = `<p>${data.description_4}</p>`;
+            document.querySelector(".item.f").innerHTML = `<p>${data.description_5}</p>`;
+            carousel.style.display = "flex";
+        })
+        .catch(error => {
+            console.log(`Error: ${error}`)
+        });
     }
 });
 
