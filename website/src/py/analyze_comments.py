@@ -4,6 +4,7 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 from collections import Counter
+import json
 
 from src.clasterization import clasterize
 from src.fetch_comments import fetch_comments
@@ -19,6 +20,9 @@ CORS(app)
 
 @app.route('/analyze_comments/<videoId>', methods=['POST'])
 def analyze_comments(videoId):
+    # Stub
+    return jsonify(json.loads(open("website/src/py/stub_json.txt", "r").read()))
+
     result = {}
 
     choosed_n_clusters = 5

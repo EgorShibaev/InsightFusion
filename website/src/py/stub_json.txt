@@ -1,0 +1,53 @@
+{
+    "n_of_clusters": 5,
+    "n_of_samples": 6,
+    "number_of_comments_0": 490,
+    "number_of_comments_4": 740,
+    "number_of_comments_3": 1010,
+    "number_of_comments_1": 324,
+    "number_of_comments_2": 530,
+    "cluster_3": {
+        "comment_0": "\u2764\u2764\u2764\u2764\u2764",
+        "comment_1": "\u2764", "comment_2": "",
+        "comment_3": "\ud83d\udc4d",
+        "comment_4": "\u2714",
+        "comment_5": "\ud83d\ude0a"
+    },
+    "cluster_1": {
+        "comment_0": "The guy from fortnite",
+        "comment_1": "This dude from Fortnite",
+        "comment_2": "The guy from Fortnite.",
+        "comment_3": "This dude from Fortnite",
+        "comment_4": "The guy from Fortnite !!",
+        "comment_5": "Holy shit that's the guy from Fortnite"
+    },
+    "cluster_2": {
+        "comment_0": "2023 yea",
+        "comment_1": "2024 anyone?",
+        "comment_2": "2024 anyone? \ud83d\ude02",
+        "comment_3": "2024 anyone ?",
+        "comment_4": "2023 Ok\uff1f\ud83d\ude02",
+        "comment_5": "2023 any one \ud83d\ude02"
+    },
+    "cluster_4": {
+        "comment_0": "[Intro]\nLook, if you had one shot or one opportunity\nTo seize everything you ever wanted in one moment\nWould you capture it or just let it slip?\nYo\n\n[Verse 1]\nHis palms are sweaty, knees weak, arms are heavy\nThere's vomit on his sweater already, mom's spaghetti\nHe's nervous, but on the surface, he looks calm and ready\nTo drop bombs, but he keeps on forgetting\nWhat he wrote down, the whole crowd goes so loud\nHe opens his mouth, but the words won't come out\nHe's chokin', how? Everybody's jokin' now\nThe clock's run out, time's up, over, blaow\nSnap back to reality, ope, there goes gravity\nOpe, there goes Rabbit, he choked, he's so mad\nBut he won't give up that easy, no, he won't have it\nHe knows his whole back's to these ropes, it don't matter\nHe's dope, he knows that, but he's broke, he's so stagnant\nHe knows when he goes back to this mobile home, that's when it's\nBack to the lab again, yo, this old rhapsody\nBetter go capture this moment and hope it don't pass him\n\n\n\n\n[Chorus]\nYou better ",
+        "comment_1": "Look\nIf you had one shot or one opportunity\nTo seize everything you ever wanted in one moment\nWould you capture it\nOr just let it slip? Yo\n\nHis palms are sweaty, knees weak, arms are heavy\nThere's vomit on his sweater already, mom's spaghetti\nHe's nervous, but on the surface he looks calm and ready\nTo drop bombs, but he keeps on forgettin'\nWhat he wrote down, the whole crowd goes so loud\nHe opens his mouth, but the words won't come out\nHe's chokin' how everybody's jokin' now\nThe clock's run out, time's up, over, blaow\nSnap back to reality, ope, there goes gravity, ope\nThere goes Rabbit, he choked, he's so mad, but he won't\nGive up that easy, no, he won't have it\nHe knows his whole back's to these ropes, it don't matter, he's dope\nHe knows that, but he's broke, he's so stagnant, he knows\nWhen he goes back to this mobile home, that's when it's\nBack to the lab again, yo, this old rhapsody\nBetter go capture this moment and hope it don't pass him and\n\n(You better lose) yourself in the music",
+        "comment_2": "This has always been my song. Chills every time. I just had a stroke and now this will be my comeback song. Thank you Eminem.",
+        "comment_3": "I Love you eminem \u2764",
+        "comment_4": "Intro]\nLook... If you had... one shot... or one opportunity...\nTo seize everything you ever wanted... one moment...\nWould you capture it? Or just let it slip?\nYo\n\n[Verse 1]\nHis palms are sweaty, knees weak, arms are heavy\nThere's vomit on his sweater already, mom's spaghetti\nHe's nervous, but on the surface he looks calm and ready\nto drops bombs, but he keeps on forgetting\nwhat he wrote down, the whole crowd goes so loud\nHe opens his mouth but the words won't come out\nHe's chokin, how? Everybody's jokin now\nThe clock's run out, time's up, over - BLAOW!\nSnap back to reality, OHH! there goes gravity\nOHH! there goes Rabbit, he choked\nHe's so mad, but he won't\nGive up that easy nope, he won't have it\nHe knows, his whole back's to these ropes\nIt don't matter, he's dope\nHe knows that, but he's broke\nHe's so sad that he knows\nwhen he goes back to this mobile home, that's when it's\nback to the lab again, yo, this whole rap shift\nHe better go capture this moment and hope it don't pass him\n\n[Cho",
+        "comment_5": "Look, if you had one shot, one opportunity\nTo seize everything you ever wanted\nOne moment\nWould you capture it or just let it slip?\nHis palms are sweaty, knees weak, arms are heavy\nThere'ss vomit on his sweater already, mom's spaghetti\nHe's nervous, but on the surface he looks calm and ready\nTo drop bombs, but he keeps on forgettin\nWhat he wrote down, the whole crowd goes so loud\nHe opens his mouth, but the words won't come out\nHe's chokin, how everybody's jokin now\nThe clocks run out, times up over, bloah!\nSnap back to reality, oh there goes gravity\nOh, there goes rabbit, he choked\nHes so mad, but he wont give up that\nIs he? no\nHe wont have it, he knows his whole back citys ropes\nIt dont matter, hes dope\nHe knows that, but hes broke\nHes so stacked that he knows\nWhen he goes back to his mobile home, thats when its\nBack to the lab again yo\nThis whole rap shit\nHe better go capture this moment and hope it dont pass him\nYou better lose yourself in the music, the moment\nYou own it, you bett"
+    },
+    "cluster_0": {
+        "comment_0": "\ud83d\ude02 Best song",
+        "comment_1": "Love this song",
+        "comment_2": "Yksi parhaista biiseist\u00e4 ikin\u00e4",
+        "comment_3": "Good song",
+        "comment_4": "\ud83d\udc47 this song is fire",
+        "comment_5": "\ud83d\udc47 this song is fire"
+    },
+    "description_3": "The comments consist primarily of various emoji\u2014symbols that convey emotions, objects, or concepts\u2014used in different combinations and quantities to express reactions or feelings without textual content.",
+    "description_1": "All comments repeatedly reference someone as \"the guy from Fortnite,\" highlighting a shared recognition or a meme regarding a character or person associated with the video game Fortnite.",
+    "description_2": "All the comments are referencing the years 2023 or 2024, many of them ask if anyone else is present or around in that year, often accompanied by various emojis.",
+    "description_4": "The comments overwhelmingly express admiration and fan support for Eminem, often describing him as the \"King of Rap\" and a legend in the music industry, with several quoting his lyrics and praising his impact on their lives.",
+    "description_0": "All comments express admiration and timeless love for a specific song, highlighting it as a favorite, a classic, or a masterpiece that never gets old."
+}
