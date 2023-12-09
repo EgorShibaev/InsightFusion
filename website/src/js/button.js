@@ -131,8 +131,8 @@ function animateValue(obj, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-// const obj = document.getElementById("animated-number");
-// animateValue(obj, 32504, 32544, 1000);
+ const obj = document.getElementById("animated-number");
+ animateValue(obj, 32504, 32544, 1000);
 
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -145,4 +145,4 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.1 }); // Adjust the threshold as needed
 
-// observer.observe(obj);
+observer.observe(obj);
