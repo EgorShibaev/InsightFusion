@@ -3,6 +3,7 @@
 
 from flask import Flask, jsonify
 from flask_cors import CORS
+from collections import Counter
 
 from src.clasterization import clasterize
 from src.fetch_comments import fetch_comments
@@ -20,6 +21,12 @@ CORS(app)
 def analyze_comments(videoId):
     result = {}
 
+    choosed_n_clusters = 5
+    choosed_n_comments = 6
+    
+    result['n_of_clusters'] = choosed_n_clusters
+    result['n_of_samples'] = choosed_n_comments
+
     comments = fetch_comments(id=videoId, max_result=3000, max_len=1000)
     ind_model = 2
     embeddings = embed(model_name=embed_model_names[ind_model], sentences=comments)
@@ -29,31 +36,33 @@ def analyze_comments(videoId):
         _, kmeans = clasterize('kmeans', embeddings, n_clusters=n_clusters)
         interias.append(kmeans.inertia_)
 
-    choosed_n_clusters = 6
-    clasters, kmeans = clasterize(
+    clusters, kmeans = clasterize(
         method_name='kmeans', 
         embeddings=embeddings,
         n_clusters=choosed_n_clusters)
+    
+    counts = Counter(clusters)
+    for cluster, count in counts.items():
+        result[f'number_of_comments_{cluster}'] = count
 
-    claster_inds = {claster for claster in clasters}
-    for ind in claster_inds:
-        inds = clasters == ind
-        comments_claster = [comment for comment, ind in zip(comments, inds) if ind]
-        embeddings_claster = embeddings[inds]
+    cluster_inds = {cluster for cluster in clusters}
+    for ind in cluster_inds:
+        inds = clusters == ind
+        comments_cluster = [comment for comment, ind in zip(comments, inds) if ind]
+        embeddings_cluster = embeddings[inds]
 
-        samples = sample(embeddings_claster, comments_claster, n_samples=5)
+        samples = sample(embeddings_cluster, comments_cluster, n_samples=choosed_n_comments)
 
-        result[f'claster_{ind}'] = {}
-        for i in range(5):
-            result[f'claster_{ind}'][f'comment_{i}'] = samples[i]
+        result[f'cluster_{ind}'] = {}
+        for i in range(choosed_n_comments):
+            result[f'cluster_{ind}'][f'comment_{i}'] = samples[i]
 
-    result['result'] = ""
-    for ind in claster_inds:
-        inds = clasters == ind
-        comments_claster = [comment for comment, ind in zip(comments, inds) if ind]
-        embeddings_claster = embeddings[inds]
+    for ind in cluster_inds:
+        inds = clusters == ind
+        comments_cluster = [comment for comment, ind in zip(comments, inds) if ind]
+        embeddings_cluster = embeddings[inds]
 
-        result[f'description_{ind}'] = describe_claster(embeddings_claster, comments_claster)
+        result[f'description_{ind}'] = describe_claster(embeddings_cluster, comments_cluster)
 
     return jsonify(result)
 

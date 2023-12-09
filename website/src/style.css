@@ -248,27 +248,27 @@
     margin-left: 15px;
 }
 
-.a {
+.n0 {
     transform: rotateY(0deg) translateZ(250px);
     background: #fff;
 }
-.b {
+.n1 {
     transform: rotateY(60deg) translateZ(250px);
     background: #fff;
 }
-.c {
+.n2 {
     transform: rotateY(120deg) translateZ(250px);
     background: #fff;
 }
-.d {
+.n3 {
     transform: rotateY(180deg) translateZ(250px);
     background: #fff;
 }
-.e {
+.n4 {
     transform: rotateY(240deg) translateZ(250px);
     background: #fff;
 }
-.f {
+.n5 {
     transform: rotateY(300deg) translateZ(250px);
     background: #fff;
 }

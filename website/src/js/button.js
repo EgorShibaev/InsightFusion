@@ -61,14 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.json();
         })
         .then(data => {
-            document.querySelector(".item.a").innerHTML = `<p>${data.description_0}</p>`;
-            document.querySelector(".item.b").innerHTML = `<p>${data.description_1}</p>`;
-            document.querySelector(".item.c").innerHTML = `<p>${data.description_2}</p>`;
-            document.querySelector(".item.d").innerHTML = `<p>${data.description_3}</p>`;
-            document.querySelector(".item.e").innerHTML = `<p>${data.description_4}</p>`;
-            document.querySelector(".item.f").innerHTML = `<p>${data.description_5}</p>`;
+            for (let i = 0; i < data.n_of_samples; i++) {
+                document.querySelector(`.item.n${i}`).innerHTML = `<p>${data[`cluster_0`][`comment_${i}`]}</p>`;
+            }
+            document.getElementById("opinion0").innerHTML = `<p>${data[`description_0`]}</p>`;
+            document.getElementById("animated-number").innerHTML = data[`number_of_comments_0`];
             info.style.display = "flex";
-            info2.style.display = "flex";
+            // info2.style.display = "flex";
         })
         .catch(error => {
             console.log(`Error: ${error}`)
@@ -111,8 +110,8 @@ function animateValue(obj, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-const obj = document.getElementById("animated-number");
-animateValue(obj, 32504, 32544, 1000);
+// const obj = document.getElementById("animated-number");
+// animateValue(obj, 32504, 32544, 1000);
 
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -125,4 +124,4 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.1 }); // Adjust the threshold as needed
 
-observer.observe(obj);
+// observer.observe(obj);
