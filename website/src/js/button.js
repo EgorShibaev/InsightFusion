@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
             displayVideoPreview(videoId);
+            displayVideoStats(videoId);
             displayComments(videoId);
         }
     });
@@ -47,7 +48,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function displayVideoPreview(videoId) {
         videoPreview.innerHTML = '<iframe width="720" height="405" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
-        videoStats.style.display = "flex";
+    }
+
+    function displayVideoStats(videoId) {
+        fetch(`http://127.0.0.1:5000/get_stats/${videoId}`, {
+            method: 'POST',
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById("views").innerHTML = data['views']
+            document.getElementById("comments").innerHTML = data['comments']
+            document.getElementById("likes").innerHTML = data['likes']
+            videoStats.style.display = "flex";
+        })
+        .catch(error => {
+            console.log(`Error: ${error}`)
+        });
     }
 
     function displayComments(videoId) {

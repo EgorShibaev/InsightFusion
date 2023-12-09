@@ -1,5 +1,5 @@
 # server should be started from the root directory of project using following line:
-# python3 -m website.src.py.analyze_comments
+# python3 -m website.src.py.server
 
 from flask import Flask, jsonify
 from flask_cors import CORS
@@ -7,7 +7,7 @@ from collections import Counter
 import json
 
 from src.clasterization import clasterize
-from src.fetch_comments import fetch_comments
+from src.fetch_from_youtube import fetch_comments, fetch_stats
 from src.embed import embed
 from src.embed import model_names as embed_model_names
 from src.sampling import sample_from_claster as sample
@@ -67,6 +67,13 @@ def analyze_comments(videoId):
         embeddings_cluster = embeddings[inds]
 
         result[f'description_{ind}'] = describe_claster(embeddings_cluster, comments_cluster)
+
+    return jsonify(result)
+
+
+@app.route('/get_stats/<videoId>', methods=['POST'])
+def get_stats(videoId):
+    result = fetch_stats(videoId)
 
     return jsonify(result)
 
