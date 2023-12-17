@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 from openai import OpenAI
 
 
-OPENAI_KEY = "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"
+OPENAI_KEY = "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"
 
 def describe_claster(embeddings, comments):
     """

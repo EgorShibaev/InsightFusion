@@ -20,8 +20,6 @@ CORS(app)
 
 @app.route('/analyze_comments/<videoId>', methods=['POST'])
 def analyze_comments(videoId):
-    # Stub
-    return jsonify(json.loads(open("website/src/py/stub_json.txt", "r").read()))
 
     result = {}
 
