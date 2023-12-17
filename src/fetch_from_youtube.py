@@ -1,5 +1,6 @@
 from googleapiclient.discovery import build
 
+developerKey='AIzaSyDJfkTXmC0nbuCAn4_NWpCmgrCFHw4DE_E'
 
 def fetch_comments(id: str, max_result=2000, max_len=200) -> list[str]:
     """
@@ -9,7 +10,9 @@ def fetch_comments(id: str, max_result=2000, max_len=200) -> list[str]:
     :return: A list of comments.
     """
 
-    youtube = build('youtube', 'v3', developerKey='AIzaSyDJfkTXmC0nbuCAn4_NWpCmgrCFHw4DE_E')
+    global developerKey
+
+    youtube = build('youtube', 'v3', developerKey=developerKey)
 
     all_comments = []
 
@@ -36,3 +39,21 @@ def fetch_comments(id: str, max_result=2000, max_len=200) -> list[str]:
             break
     
     return all_comments
+
+
+def fetch_stats(id):
+    global developerKey
+
+    youtube = build('youtube', 'v3', developerKey=developerKey)
+
+    video_response = youtube.videos().list(
+        part='statistics',
+        id=id
+    ).execute()
+
+    result = {}
+    result['views'] = video_response['items'][0]['statistics']['viewCount']
+    result['comments'] = video_response['items'][0]['statistics']['commentCount']
+    result['likes'] = video_response['items'][0]['statistics']['likeCount']
+    
+    return result

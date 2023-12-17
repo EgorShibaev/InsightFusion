@@ -1,1 +1,3 @@
 src/__pycache__/*.pyc
+website/src/py/__pycache__
+.vscode
