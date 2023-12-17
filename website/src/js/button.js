@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var sendAction = document.getElementById("send-action");
     var videoPreview = document.getElementById("video-preview");
     var videoStats = document.getElementById("video-stats");
-    var info = document.querySelector(".one-more-container");
-    var info2 = document.querySelector(".one-more-container-rev");
+    var info = document.getElementsByClassName("one-more-container");
+    var info2 = document.getElementsByClassName("one-more-container-rev");
 
     inputField.addEventListener("input", function() {
         toggleSendButton();
@@ -14,8 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
     sendAction.addEventListener("click", function() {
         if(sendAction.classList.contains("send-enabled")) {
             videoStats.style.display = "none";
-            info.style.display = "none";
-            info2.style.display = "none";
+            for (let elem of info) {
+                elem.style.display = "none";
+            }
+            for (let elem of info2) {
+                elem.style.display = "none";
+            }
             var videoUrl = inputField.value;
             var videoId = extractYoutubeVideoId(videoUrl);
             if (!videoId) {
@@ -64,9 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.json();
         })
         .then(data => {
-            document.getElementById("views").innerHTML = data['views']
-            document.getElementById("comments").innerHTML = data['comments']
-            document.getElementById("likes").innerHTML = data['likes']
+            document.getElementById("views").innerHTML = data['views'];
+            document.getElementById("comments").innerHTML = data['comments'];
+            document.getElementById("likes").innerHTML = data['likes'];
             videoStats.style.display = "flex";
         })
         .catch(error => {
@@ -86,12 +90,21 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(data => {
             for (let i = 0; i < data.n_of_samples; i++) {
-                document.querySelector(`.item.n${i}`).innerHTML = `<p>${data[`cluster_0`][`comment_${i}`]}</p>`;
+                items = document.getElementsByClassName(`item n${i}`);
+                for (let j = 0; j < data.n_of_clusters; j++) {
+                    items[j].innerHTML = `<p>${data[`cluster_${j}`][`comment_${i}`]}</p>`;
+                }
             }
-            document.getElementById("opinion0").innerHTML = `<p>${data[`description_0`]}</p>`;
-            document.getElementById("animated-number").innerHTML = data[`number_of_comments_0`];
-            info.style.display = "flex";
-            info2.style.display = "flex";
+            for (let i = 0; i < data.n_of_clusters; i++) {
+                document.getElementById(`opinion-${i+1}`).innerHTML = `<p>${data[`description_${i}`]}</p>`;
+                document.getElementById(`animated-number-${i+1}`).innerHTML = data[`number_of_comments_${i}`];
+            }
+            for (let elem of info) {
+                elem.style.display = "flex";
+            }
+            for (let elem of info2) {
+                elem.style.display = "flex";
+            }
         })
         .catch(error => {
             console.log(`Error: ${error}`)
@@ -134,18 +147,18 @@ function animateValue(obj, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
- const obj = document.getElementById("animated-number");
- animateValue(obj, 32504, 32544, 1000);
+//  const obj = document.getElementById("animated-number");
+//  animateValue(obj, 32504, 32544, 1000);
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Start the animation when the element is visible
-            animateValue(obj, 32544 - 44, 32544, 2500);
-            // Optionally, unobserve after the animation starts
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 }); // Adjust the threshold as needed
+// const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             // Start the animation when the element is visible
+//             animateValue(obj, 32544 - 44, 32544, 2500);
+//             // Optionally, unobserve after the animation starts
+//             observer.unobserve(entry.target);
+//         }
+//     });
+// }, { threshold: 0.1 }); // Adjust the threshold as needed
 
-observer.observe(obj);
+// observer.observe(obj);

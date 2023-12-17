@@ -21,24 +21,20 @@ CORS(app)
 @app.route('/analyze_comments/<videoId>', methods=['POST'])
 def analyze_comments(videoId):
     # Stub
-    return jsonify(json.loads(open("website/src/py/stub_json.txt", "r").read()))
+    # return jsonify(json.loads(open("website/src/py/stub_json.txt", "r").read()))
 
     result = {}
 
     choosed_n_clusters = 5
     choosed_n_comments = 6
+    comments_to_analyze = 500
     
     result['n_of_clusters'] = choosed_n_clusters
     result['n_of_samples'] = choosed_n_comments
 
-    comments = fetch_comments(id=videoId, max_result=3000, max_len=1000)
+    comments = fetch_comments(id=videoId, max_result=comments_to_analyze, max_len=250)
     ind_model = 2
     embeddings = embed(model_name=embed_model_names[ind_model], sentences=comments)
-
-    interias = []
-    for n_clusters in range(1, 10):
-        _, kmeans = clasterize('kmeans', embeddings, n_clusters=n_clusters)
-        interias.append(kmeans.inertia_)
 
     clusters, kmeans = clasterize(
         method_name='kmeans', 
@@ -47,7 +43,7 @@ def analyze_comments(videoId):
     
     counts = Counter(clusters)
     for cluster, count in counts.items():
-        result[f'number_of_comments_{cluster}'] = count
+        result[f'number_of_comments_{cluster}'] = str((count * 100) // comments_to_analyze) + "%"
 
     cluster_inds = {cluster for cluster in clusters}
     for ind in cluster_inds:
