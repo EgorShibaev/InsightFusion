@@ -282,7 +282,50 @@
 
 }
 
+.one-more-container-rev {
+    display: flex;
+    justify-content: start;
+    /* reverse items order */
+    flex-direction: row-reverse;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    /* Adjust the space between the carousel and the info section */
+}
 
+.one-more-container-rev .carousel {
+    margin-left: 100px;
+}
+
+.one-more-container-rev .info-container {
+
+    margin-left: 100px;
+
+}
+
+.carousel-container-rev {
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+    margin-left: 350px;
+
+    width: 250px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+
+}
+
+.info-container-rev {
+    /* Styling for the container of the title and text */
+    justify-content: center;
+    padding-top: 120px;
+    margin-left: 350px;
+
+    width: 450px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+}
 
 
 .info-container {

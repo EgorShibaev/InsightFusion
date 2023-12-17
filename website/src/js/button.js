@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     sendAction.addEventListener("click", function() {
         if(sendAction.classList.contains("send-enabled")) {
+            videoStats.style.display = "none";
+            info.style.display = "none";
+            info2.style.display = "none";
             var videoUrl = inputField.value;
             var videoId = extractYoutubeVideoId(videoUrl);
             if (!videoId) {
@@ -88,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("opinion0").innerHTML = `<p>${data[`description_0`]}</p>`;
             document.getElementById("animated-number").innerHTML = data[`number_of_comments_0`];
             info.style.display = "flex";
-            // info2.style.display = "flex";
+            info2.style.display = "flex";
         })
         .catch(error => {
             console.log(`Error: ${error}`)
