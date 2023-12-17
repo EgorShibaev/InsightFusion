@@ -1,0 +1,146 @@
+.pre-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.pre-info h1 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #237db9;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pre-info h1 span {
+    color: #2b88ce;
+}
+
+.body {
+    background-color: #eae5e5;;
+}
+
+.container-three {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction:row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    gap: 50px;
+
+}
+
+.mission {
+    display: flex;
+    align-items: flex-start;
+    flex-direction:column;
+    gap: 20px;
+    background: #dae4ff;
+    width: 700px;
+    height: 100px;
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+
+.mission-right {
+    display: flex;
+    align-items: flex-start;
+    flex-direction:column;
+    gap: 20px;
+    background: #dae4ff;
+    width: 700px;
+    height: 100px;
+    border-radius: 20px;
+    margin-left: 700px;
+    margin-bottom: 100px;
+}
+
+.mission-right p {
+    font-family: Tahoma, sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #222;
+    margin-left: 10px;
+}
+
+
+.mission p {
+    font-family: Tahoma, sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #222;
+    margin-left: 10px;
+}
+
+
+
+
+
+.uni {
+    width: 600px; /* Adjust width as needed */
+    height: 400px;
+    margin-top: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 450px;
+    margin-bottom: 100px;
+}
+
+.line {
+    width: 80%;
+    border: none;
+    height: 260px;
+    background: radial-gradient(at 900%, #4accff, #102493);
+    margin-top: 100px;
+    display: flex; /* Enable flexbox */
+    flex-direction: column;
+    align-items: center; /* Vertically center the content */
+    margin-left: 140px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.line p {
+    font-family: Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: white;
+
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.image-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 50px;
+    animation: scrollImages 10s linear infinite; /* Adjust '10s' for speed */
+
+}
+
+.image-container img {
+     /* Adjust based on your preference */
+    /* Prevents images from resizing */
+}
+
+@keyframes scrollImages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-15%); /* Since the images are doubled, 50% will be used */
+    }
+}
+
+

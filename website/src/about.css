@@ -1,0 +1,251 @@
+.price-page {
+    background-color: #eae5e5;
+}
+
+.pre-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    margin-top: 80px;
+    margin-bottom: 240px;
+}
+
+.pre-info h1 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pre-info p {
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #222;
+
+}
+
+.pre-info h1 span {
+    color: #2b88ce;
+}
+
+.mission p span {
+    color: #2b88ce;
+}
+
+.container-one {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction:row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    gap: 120px;
+}
+
+.container-two {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction:row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    gap: 120px;
+}
+
+.container-three {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction:row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    gap: 50px;
+}
+
+.mission {
+    display: flex;
+    align-items: flex-start;
+    flex-direction:column;
+    gap: 20px;
+    background: white;
+    width: 700px;
+    height: 200px;
+    border-radius: 20px;
+    margin-left: 100px;
+}
+
+.mission h1 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #2b88ce;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.mission p {
+    font-family: Tahoma, sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #222;
+    margin-left: 10px;
+}
+
+.container-two {
+    margin-top: 200px;
+}
+
+.container-two .mission {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    background: white;
+    width: 720px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: 625px;
+}
+
+.container-three .mission {
+    display: flex;
+    align-items: flex-start;
+    flex-direction:column;
+    gap: 20px;
+    background: white;
+    width: 700px;
+    height: 400px;
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.line {
+    width: 100%;
+    border: none;
+    height: 160px;
+    background: radial-gradient(at 900%, #4accff, #102493);
+    margin-top: 100px;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center the content */
+    justify-content: center;
+}
+
+.line p {
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo-animation {
+    width: 300px; /* Adjust width as needed */
+    position: absolute; /* Use absolute positioning within the flex container */
+    /* Adjust this value as needed */
+    transform: translate(-50%, -50%) rotate(0deg); /* Adjust horizontal starting point and center vertically */
+    transition: transform 0.3s ease-out; /* Smooth transition */
+
+}
+
+.container-two .logo-animation {
+    width: 300px; /* Adjust width as needed */
+    position: absolute; /* Use absolute positioning within the flex container */
+    margin-left: 700px;
+    /* Adjust this value as needed */
+    transform: translate(-50%, -50%) rotate(0deg); /* Adjust horizontal starting point and center vertically */
+    transition: transform 0.3s ease-out
+}
+
+.uni {
+    width: 600px; /* Adjust width as needed */
+    height: 400px;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.ttt .pre-info {
+    margin-top: 150px;
+}
+
+.ttt .pre-info h1 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #2b88ce;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.ttt .pre-info h1 span {
+    color: #f80cc7;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 0 4px;
+}
+
+.column {
+    float: left;
+    width: 33.1%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
