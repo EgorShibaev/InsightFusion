@@ -3,9 +3,7 @@ from scipy.stats import multivariate_normal
 from tqdm.notebook import tqdm
 from sklearn.decomposition import PCA
 from openai import OpenAI
-
-
-OPENAI_KEY = "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"
+from config import OPENAI_KEY
 
 def describe_claster(embeddings, comments, top_k = 10):
     """

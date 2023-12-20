@@ -1,6 +1,7 @@
 from googleapiclient.discovery import build
+from config import GOOGLE_KEY
 
-developerKey='AIzaSyDJfkTXmC0nbuCAn4_NWpCmgrCFHw4DE_E'
+developerKey = GOOGLE_KEY
 
 def fetch_comments(id: str, max_result=2000, max_len=200) -> list[str]:
     """

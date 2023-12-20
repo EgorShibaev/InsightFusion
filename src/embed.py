@@ -4,6 +4,7 @@ import numpy as np
 import voyageai
 from voyageai import get_embeddings
 from tqdm.notebook import tqdm
+from config import COHERE_KEY, VOYAGEAI_KEY
 
 model_names = [
     'SentenceTransformer/bert-base-nli-mean-tokens',
@@ -14,8 +15,8 @@ model_names = [
 ]
 
 # this are trial key
-cohere_key = 'oFd6NCO7dkVeFVPSXsANEzlT4OShQKGovZNhcszU'
-voyageai.api_key = 'pa-pZZbquhxGTUOMcrhyjzGN3_JmGf5uUgdt6tpImWhomY'
+cohere_key = COHERE_KEY
+voyageai.api_key = VOYAGEAI_KEY
 
 
 def embed(model_name, sentences):
