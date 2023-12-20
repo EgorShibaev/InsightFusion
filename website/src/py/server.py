@@ -43,7 +43,7 @@ def analyze_comments(videoId):
     
     counts = Counter(clusters)
     for cluster, count in counts.items():
-        result[f'number_of_comments_{cluster}'] = str((count * 100) // comments_to_analyze) + "%"
+        result[f'number_of_comments_{cluster}'] = str((count * 100) // len(comments)) + "%"
 
     cluster_inds = {cluster for cluster in clusters}
     for ind in cluster_inds:
